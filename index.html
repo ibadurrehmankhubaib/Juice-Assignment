@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juice Bar Order System</title>
+</head>
+<body>
+  <h1>Juice Bar Order System</h1>
+
+  <label for="juice">Select Juice Type:</label>
+  <select id="juice">
+    <option value="Orange">Orange</option>
+    <option value="Apple">Apple</option>
+    <option value="Mango">Mango</option>
+  </select>
+  <br><br>
+
+  <label for="size">Select Glass Size:</label>
+  <select id="size">
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+  </select>
+  <br><br>
+
+  <label for="sugar">Sugar Preference:</label>
+  <select id="sugar">
+    <option value="Extra Sugar">Extra Sugar</option>
+    <option value="No Sugar">No Sugar</option>
+    <option value="minimum Sugar">minimum sugur</option>
+    <option value="maximum Sugar">maximum Sugar</option>
+  </select>
+  <br><br>
+  <button onclick="generateBill()">Place Order</button>
+  <script>
+    function generateBill() {
+      let juice = document.getElementById("juice").value;
+      let size = document.getElementById("size").value;
+      let sugar = document.getElementById("sugar").value;
+      let juicePrice = 0;
+      let sizePrice = 0;
+      let sugarPrice = 0;
+      // Juice price
+      if (juice === "Orange") {
+        juicePrice = 150;
+      } else if (juice === "Apple") {
+        juicePrice = 120;
+      } else if (juice === "Mango") {
+        juicePrice = 100;
+      }
+      // Size price
+      if (size === "Small") {
+        sizePrice = 50;
+      } else if (size === "Medium") {
+        sizePrice = 100;
+      } else if (size === "Large") {
+        sizePrice = 150;
+      }
+      // Sugar price
+      if (sugar === "Extra Sugar") {
+        sugarPrice = 20;
+      } else if (sugar === "No Sugar") {
+        sugarPrice = 0;
+      } else if (sugar === "minimum Sugar") {
+        sugarPrice = 0;
+      } else if (sugar === "maximum Sugar") {
+        sugarPrice = 0;
+      }
+      let totalBill = juicePrice + sizePrice + sugarPrice;
+      // Show summary in console
+      console.log("Selected Juice: " + juice);
+      console.log("Size: " + size);
+      console.log("Sugar: " + sugar);
+      console.log("Total Bill: " + totalBill);
+      console.log("you slect a glass of juice");
+    }
+  </script>
+</body>
+</html>
